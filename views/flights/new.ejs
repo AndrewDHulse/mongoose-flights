@@ -1,0 +1,33 @@
+<%-include('../partials/header')%>
+
+<h2> Enter a New Flight, Captain</h2>
+<form action="/flights" method="POST">
+    <label>Airline:
+        <select name="airline">
+            <option value="American">'Murican</option>
+            <option value="Southwest">South and also West</option>
+            <option value="United">Untied(sic)</option>
+        </select>
+    </label>
+
+    <label>Airport:
+        <select name="airport">
+            <option value="AUS"> Austr(al)ia </option>
+            <option value="DFW">Don't Freakin' Worry</option>
+            <option value="DEN">Dominion of Elven Nurturers</option>
+            <option value="LAX">LAX, not  everything needs to be a joke</option>
+            <option value="SAN">Comic San(s)</option>
+        </select>
+    </label>
+
+    <label> Flight Number (10-9999):
+        <input type="number" name="flightNo">
+    </label>
+
+    <label> Date of Departure
+        <input type="datetime-local" name="departs"> 
+    </label>
+    <button type="submit">Add that Flight</button>
+</form>
+<p><%-errorMsg%></p>
+<%-include('../partials/footer')%>
