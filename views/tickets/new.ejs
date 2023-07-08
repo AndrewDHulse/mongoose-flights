@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+
+<form action="/flights/<%= flight._id%>/tickets" method="POST">    
+    <label>Name:</label>
+    <input type="string" name="name">
+    <label>Seat (Must be between A1-F9):</label>
+    <input name="seat" required pattern="[A-F][1-9]\d?">
+    <br>
+    <label>Price:</label>
+    <input type="number" name="price" min="0">
+    <br>
+    <label>Flight:</label>
+    <select name="flight">
+        <% flights.forEach((flight) => { %>
+            <option value="<%= flight._id %>"><%= flight.airline %> - <%= flight.flightNo %></option>
+        <% }); %>
+    </select>
+    <br>
+    <input type="submit" value="Add Ticket">
+</form>
+
+<%- include('../partials/footer') %>

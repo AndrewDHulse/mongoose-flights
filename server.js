@@ -8,6 +8,7 @@ require('dotenv').config();
 require('./config/database');
 
 var indexRouter = require('./routes/index');
+var ticketsRouter = require('./routes/tickets')
 var flightsRouter = require('./routes/flights');
 var destinationsRouter= require('./routes/destinations')
 
@@ -24,6 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/', ticketsRouter);
 app.use('/flights', flightsRouter);
 app.use('/', destinationsRouter);
 
